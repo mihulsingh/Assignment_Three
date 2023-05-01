@@ -24,7 +24,7 @@ public class UserController {
 	@GetMapping("/")
 	public String home(Model model) {
 		 model.addAttribute("UserDetails", new UserDetails());
-		return "survey";
+		return "index";
 	}
 	
 	@GetMapping("/surveys")
