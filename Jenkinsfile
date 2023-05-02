@@ -23,7 +23,7 @@ pipeline {
             }
             }
         }
-      stage('Build Docker Image') {
+      stage('Building Docker Image') {
          steps {
             script{
                docker.withRegistry('',registryCredential){
@@ -33,7 +33,7 @@ pipeline {
          }
       }
 
-      stage('Push Image to Dockerhub') {
+      stage('Pushing Image to Docker Hub') {
          steps {
             script{
                docker.withRegistry('',registryCredential){
@@ -42,7 +42,7 @@ pipeline {
             }
          }
       }
-      stage('Deploying to Rancher to single node(deployed in 3 replicas)') {
+      stage('Rancher Deployment') {
          steps {
             script{
                sh "kubectl set image deployment/assignment-three container-1=mihulsingh/assignmentthree:${env.TIMESTAMP} -n default"
