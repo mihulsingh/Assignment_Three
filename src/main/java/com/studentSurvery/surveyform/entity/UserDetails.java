@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 
 
 @Entity
-@Table(name="homework")
+@Table(name="Homework")
 public class UserDetails {
 
 	@Id
